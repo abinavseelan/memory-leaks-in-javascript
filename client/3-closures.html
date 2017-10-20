@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>⚡️ Timers</title>
+    <title>⚡️ Closures</title>
     <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
     <div class="container">
         <h1 class="header">
-            Timers
+            Closures
         </h1>
         <button class="btn" id="btn">
             The Button
@@ -21,24 +21,21 @@
 
 
     <script>
-        // Example from Google Developers
         const btn = document.getElementById('btn');
 
-        let obj = {
-            callAgain: function() {
-                let ref = this;
-                let val = setTimeout(function() {
-                    console.log(`Called Again: ${new Date().toTimeString()}`);
+        function startLeak() {
+            const arrayOfEntities = [];
 
-                    ref.callAgain();
-                }, 500);
+            return function() {
+                arrayOfEntities.push(new Array(1000000).join('x'));
             }
         }
 
-        btn.addEventListener('click', () => {
-            obj.callAgain();
+        const leak = startLeak();
 
-            obj = null;
+        btn.addEventListener('click', () => {
+
+            leak();
         });
     </script>
 </body>
