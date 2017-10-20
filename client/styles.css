@@ -29,4 +29,6 @@ body {
     color: white;
     border-bottom: 3px solid rgb(173, 37, 37);
     font-size: 1em;
+
+    margin: 0 2em;
 }

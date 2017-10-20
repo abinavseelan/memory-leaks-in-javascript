@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>⚡️ Dettached DOM Nodes</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">
+            Leaky DOM Nodes
+        </h1>
+        <button class="btn" id="btn">
+            Remove DOM Node
+        </button>
+
+        <button class="btn" id="reset-btn">
+            Clear DOM Nodes from Memory
+        </button>
+
+        <ul id="list-items"></ul>
+    </div>
+
+
+    <script>
+        const btn = document.getElementById('btn');
+        const resetBtn = document.getElementById('reset-btn');
+
+        let listArray = [];
+
+        for (let i = 0 ; i < 10; i++) {
+            const list = document.getElementById('list-items');
+
+            let listItem = document.createElement('li');
+            listItem.appendChild(document.createTextNode('Foo Bar'));
+
+            list.appendChild(listItem);
+            listArray.push(listItem);
+        }
+
+        btn.addEventListener('click', () => {
+            const list = document.getElementById('list-items');
+
+            list.innerHTML = '';
+        });
+
+        resetBtn.addEventListener('click', () => {
+            listArray = null;
+            listArray = [];
+        });
+    </script>
+</body>
+
+</html>
