@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>⚡️ Accidental Globals</title>
+    <link rel="stylesheet" href="./styles.css" />    
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">
+            Accidental Globals
+        </h1>
+        <button class="btn" id="btn">
+            The Button
+        </button>
+    </div>
+
+
+    <script>
+        const btn = document.getElementById('btn');
+
+        function createArrays() {
+            function createStrings() {
+                arrayOfStrings = new Array(10000000).join('x');
+            }
+
+            function createNumbers() {
+                arrayOfNumbers = new Array(10000000).join(2);
+            }
+            
+            createStrings();
+            createNumbers();
+        }
+
+        console.log(`Window.arrayOfStrings: ${window.arrayOfStrings}`);
+        console.log(`Window.arrayOfNumbers: ${window.arrayOfNumbers}`);
+
+        btn.addEventListener('click', () => {
+            createArrays();
+
+            console.log(`Window.arrayOfStrings: ${window.arrayOfStrings}`);
+            console.log(`Window.arrayOfNumbers: ${window.arrayOfNumbers}`);
+        });
+    </script>
+</body>
+</html>

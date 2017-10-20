@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    margin-right: 2em;
+    color: #2f2f2f;
+}
+
+.btn {
+    border: 0;
+    background-color: #F03434;
+    padding: 20px 40px;
+    color: white;
+    border-bottom: 3px solid rgb(173, 37, 37);
+    font-size: 1em;
+}

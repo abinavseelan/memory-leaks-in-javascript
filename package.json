@@ -1,0 +1,23 @@
+{
+  "name": "memory-leaks-in-javascript",
+  "version": "1.0.0",
+  "description": "A repository of memory leaks that can occur in Javascript.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abinavseelan/memory-leaks-in-javascript.git"
+  },
+  "author": "Abinav Seelan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abinavseelan/memory-leaks-in-javascript/issues"
+  },
+  "homepage": "https://github.com/abinavseelan/memory-leaks-in-javascript#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
