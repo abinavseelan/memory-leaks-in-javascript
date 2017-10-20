@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>⚡️ Hidden Classes</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">
+            Fast and Slow Objects
+        </h1>
+        <button class="btn" id="btn">
+            The Button
+        </button>
+    </div>
+
+
+    <script>
+        const btn = document.getElementById('btn');
+
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        const p1 = new Point(1, 2);
+        const p2 = new Point(1, 2);
+
+        btn.addEventListener('click', () => {
+            p1.a = 5;
+            p1.b = 6;
+
+            p2.b = 6;
+            p2.a = 5;
+        });
+    </script>
+</body>
+
+</html>
