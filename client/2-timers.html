@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>⚡️ Accidental Globals</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">
+            Timers
+        </h1>
+        <button class="btn" id="btn">
+            The Button
+        </button>
+    </div>
+
+
+    <script>
+        // Example from Google Developers
+        const btn = document.getElementById('btn');
+
+        let obj = {
+            callAgain: function() {
+                let ref = this;
+                let val = setTimeout(function() {
+                    console.log(`Called Again: ${new Date().toTimeString()}`);
+
+                    ref.callAgain();
+                }, 500);
+            }
+        }
+
+        btn.addEventListener('click', () => {
+            obj.callAgain();
+
+            obj = null;
+        });
+    </script>
+</body>
+
+</html>
