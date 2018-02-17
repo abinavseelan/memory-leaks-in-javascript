@@ -1,6 +1,6 @@
 # Memory Leaks in Javascript
 
-This repository is a companion demo for the talk on "Investigating Memory Leaks and performance tuning your Javascript given at [this meetup](https://www.meetup.com/preview/AngularJS-Bangalore/events/243573762)
+This repository is a companion demo for the talk on "Investigating Memory Leaks and performance tuning your Javascript given at [AngularJS & ReactJS Bangalore meetup](https://www.meetup.com/AngularJS-Bangalore/events/243573762/)
 
 The slides for the talk can be found [here](https://slides.com/abinavseelan/investigating-memory-leaks)
 
